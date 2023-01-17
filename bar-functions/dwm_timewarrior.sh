@@ -11,7 +11,7 @@ dwm_timewarrior() {
 	if [ "$current_tracking" = "There is no active time tracking." ]; then
 		icon=""
 	else
-		icon="⌛"
+		icon="⏳"
 	fi
 
 	printf "%s" "$icon"

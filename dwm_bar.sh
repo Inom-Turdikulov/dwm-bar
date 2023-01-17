@@ -18,8 +18,8 @@ DIR=$(dirname "$LOC")
 export IDENTIFIER="unicode"
 
 # Change the charachter(s) used to seperate modules. If two are used, they will be placed at the start and end.
-export SEP1="["
-export SEP2="]"
+export SEP1=" "
+export SEP2=" "
 
 # Import the modules
 #. "$DIR/bar-functions/dwm_alarm.sh"
@@ -31,13 +31,15 @@ export SEP2="]"
 #. "$DIR/bar-functions/dwm_connman.sh"
 #. "$DIR/bar-functions/dwm_countdown.sh"
 #. "$DIR/bar-functions/dwm_currency.sh"
-#. "$DIR/bar-functions/dwm_date.sh"
-#. "$DIR/bar-functions/dwm_keyboard.sh"
+. "$DIR/bar-functions/dwm_date.sh"
+. "$DIR/bar-functions/dwm_timewarrior.sh"
+. "$DIR/bar-functions/dwm_dunst.sh"
+. "$DIR/bar-functions/dwm_keyboard.sh"
 #. "$DIR/bar-functions/dwm_loadavg.sh"
 #. "$DIR/bar-functions/dwm_mail.sh"
 #. "$DIR/bar-functions/dwm_mpc.sh"
 #. "$DIR/bar-functions/dwm_networkmanager.sh"
-#. "$DIR/bar-functions/dwm_pulse.sh"
+. "$DIR/bar-functions/dwm_pulse.sh"
 #. "$DIR/bar-functions/dwm_resources.sh"
 #. "$DIR/bar-functions/dwm_spotify.sh"
 #. "$DIR/bar-functions/dwm_transmission.sh"
@@ -70,12 +72,14 @@ do
     #upperbar="$upperbar$(dwm_connman)"
     #upperbar="$upperbar$(dwm_countdown)"
     #upperbar="$upperbar$(dwm_currency)"
-    #upperbar="$upperbar$(dwm_date)"
-    #upperbar="$upperbar$(dwm_keyboard)"
+    upperbar="$upperbar$(dwm_date)"
+    upperbar="$upperbar$(dwm_timewarrior)"
+    upperbar="$upperbar$(dwm_dunst)"
+    upperbar="$upperbar$(dwm_pulse)"
+    upperbar="$upperbar$(dwm_keyboard)"
     #upperbar="$upperbar$(dwm_loadavg)"
     #upperbar="$upperbar$(dwm_mail)"
     #upperbar="$upperbar$(dwm_mpc)"
-    #upperbar="$upperbar$(dwm_pulse)"
     #upperbar="$upperbar$(dwm_resources)"
     #upperbar="$upperbar$(dwm_spotify)"
     #upperbar="$upperbar$(dwm_transmission)"
@@ -83,12 +87,11 @@ do
     #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
     #upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     #upperbar="$upperbar$(dwm_network_speed)"; dwm_network_speed_record
-   
     # Append results of each func one by one to the lowerbar string
     lowerbar=""
-    
+
     xsetroot -name "$upperbar"
-    # Uncomment the line below to enable the lowerbar 
+    # Uncomment the line below to enable the lowerbar
     #xsetroot -name "$upperbar;$lowerbar"
-    sleep 1
+    sleep 2
 done

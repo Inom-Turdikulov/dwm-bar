@@ -7,11 +7,23 @@
 # Dependencies: xorg-setxkbmap
 
 dwm_keyboard () {
+    COMMAND=$(xset -q | grep LED | awk '{ print $10 }')
+
+    case "$COMMAND" in
+
+    "00000000"|"00000001") LAYOUT="us" ;;
+
+    "00001000"|"00001001") LAYOUT="[RUSSIAN]" ;;
+
+    *) LAYOUT="??" ;;
+
+    esac
+
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
-        printf "⌨ %s" "$(setxkbmap -query | awk '/layout/{print $2}')"
+        printf "⌨ %s" "$LAYOUT"
     else
-        printf "KEY %s" "$(setxkbmap -query | awk '/layout/{print $2}')"
+        printf "KEY %s" "$LAYOUT"
     fi
     printf "%s\n" "$SEP2"
 }

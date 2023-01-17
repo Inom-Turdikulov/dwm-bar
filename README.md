@@ -1,41 +1,45 @@
 # dwm-bar
 A modular statusbar for dwm
-![screenshot](https://raw.githubusercontent.com/joestandring/dwm-bar/master/sshot.png)
-## Table of Contents
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Enabling Functions](#enabling-functions)
-  - [Refresh Rate](#refresh-rate)
-  - [Configuring Functions](#configuring-functions)
-  - [Identifiers](#identifiers)
-- [Current Functions](#current-functions)
-  - [dwm_alsa](#dwm_alsa)
-  - [dwm_pulse](#dwm_pulse)
-  - [dwm_battery](#dwm_battery)
-  - [dwm_countdown](#dwm_countdown)
-  - [dwm_alarm](#dwm_alarm)
-  - [dwm_keyboard](#dwm_keyboard)
-  - [dwm_resources](#dwm_resources)
-  - [dwm_cmus](#dwm_cmus)
-  - [dwm_mpc](#dwm_mpc)
-  - [dwm_spotify](#dwm_mpc)
-  - [dwm_date](#dwm_date)
-  - [dwm_mail](#dwm_mail)
-  - [dwm_weather](#dwm_weather)
-  - [dwm_networkmanager](#dwm_networkmanager)
-  - [dwm_wpa](#dwm_wpa)
-  - [dwm_vpn](#dwm_vpn)
-  - [dwm_ccurse](#dwm_ccurse)
-  - [dwm_transmission](#dwm_transmission)
-  - [dwm_backlight](#dwm_backlight)
-  - [dwm_connman](#dwm_connman)
-  - [dwm_loadavg](#dwm_loadavg)
-  - [dwm_currency](#dwm_currency)
-  - [dwm_solar_panel](#dwm_solar_panel)
-  - [dwm_network_speed](#dwm_network_speed)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-> :warning: While I try to be as active as I can be, it may take me some time to resolve issues as I am much busier these days than when I started this project. I appreciate ALL contributions and will try my best to respond as soon as I am able to. Thank you for understanding :) - @joestandring
+![screenshot](sshot.png)
+
+# Table of Contents
+
+- [dwm-bar](#dwm-bar)
+- [Table of Contents](#table-of-contents)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+        - [Enabling Functions](#enabling-functions)
+        - [Refresh rate](#refresh-rate)
+        - [Configuring functions](#configuring-functions)
+        - [Identifiers](#identifiers)
+    - [Current Functions](#current-functions)
+        - [dwm_alsa](#dwm_alsa)
+        - [dwm_pulse](#dwm_pulse)
+        - [dwm_battery](#dwm_battery)
+        - [dwm_countdown](#dwm_countdown)
+        - [dwm_alarm](#dwm_alarm)
+        - [dwm_keyboard](#dwm_keyboard)
+        - [dwm_resources](#dwm_resources)
+        - [dwm_cmus](#dwm_cmus)
+        - [dwm_mpc](#dwm_mpc)
+        - [dwm_spotify](#dwm_spotify)
+        - [dwm_date](#dwm_date)
+        - [dwm_mail](#dwm_mail)
+        - [dwm_weather](#dwm_weather)
+        - [dwm_networkmanager](#dwm_networkmanager)
+        - [dwm_wpa](#dwm_wpa)
+        - [dwm_vpn](#dwm_vpn)
+        - [dwm_ccurse](#dwm_ccurse)
+        - [dwm_transmission](#dwm_transmission)
+        - [dwm_backlight](#dwm_backlight)
+        - [dwm_connman](#dwm_connman)
+        - [dwm_loadavg](#dwm_loadavg)
+        - [dwm_solar_panel](#dwm_solar_panel)
+        - [dwm_currency](#dwm_currency)
+        - [dwm_network_speed](#dwm_network_speed)
+    - [Contributing](#contributing)
+    - [Acknowledgements](#acknowledgements)
+
 ## Installation
 1. Clone and enter the repository:
 ```
@@ -86,15 +90,15 @@ do
     upperbar=""
     upperbar="$upperbar$(dwm_battery)"
     upperbar="$upperbar$(dwm_backlight)"
-   
+
     # Append results of each func one by one to the lowerbar string
     lowerbar=""
     lowerbar="$lowerbar$(dwm_pulse)"
     lowerbar="$lowerbar$(__DWM_BAR_WEATHER__)"
-    
+
     #xsetroot -name "$upperbar"
-    
-    # Uncomment the line below to enable the lowerbar 
+
+    # Uncomment the line below to enable the lowerbar
     xsetroot -name "$upperbar;$lowerbar"
     sleep 1
 done

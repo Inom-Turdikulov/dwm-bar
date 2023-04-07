@@ -11,9 +11,9 @@ dwm_keyboard () {
 
     case "$COMMAND" in
 
-    "00000000"|"00000001") LAYOUT="us" ;;
+    "00000000"|"00000001") LAYOUT="US" ;;
 
-    "00001000"|"00001001") LAYOUT="[RUSSIAN]" ;;
+    "00001000"|"00001001") LAYOUT="🇷" ;;
 
     *) LAYOUT="??" ;;
 
@@ -21,7 +21,7 @@ dwm_keyboard () {
 
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
-        printf "⌨ %s" "$LAYOUT"
+        printf "%s" "$LAYOUT"
     else
         printf "KEY %s" "$LAYOUT"
     fi

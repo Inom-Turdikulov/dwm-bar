@@ -32,7 +32,7 @@ export SEP2=" "
 #. "$DIR/bar-functions/dwm_countdown.sh"
 #. "$DIR/bar-functions/dwm_currency.sh"
 . "$DIR/bar-functions/dwm_date.sh"
-. "$DIR/bar-functions/dwm_timewarrior.sh"
+# . "$DIR/bar-functions/dwm_timewarrior.sh"
 . "$DIR/bar-functions/dwm_dunst.sh"
 . "$DIR/bar-functions/dwm_keyboard.sh"
 #. "$DIR/bar-functions/dwm_loadavg.sh"
@@ -53,7 +53,7 @@ parallelize() {
         printf "Running parallel processes\n"
         #dwm_networkmanager &
         #dwm_weather &
-        sleep 5
+        sleep 300
     done
 }
 parallelize &
@@ -73,7 +73,7 @@ do
     #upperbar="$upperbar$(dwm_countdown)"
     #upperbar="$upperbar$(dwm_currency)"
     upperbar="$upperbar$(dwm_date)"
-    upperbar="$upperbar$(dwm_timewarrior)"
+    # upperbar="$upperbar$(dwm_timewarrior)"
     upperbar="$upperbar$(dwm_dunst)"
     upperbar="$upperbar$(dwm_pulse)"
     upperbar="$upperbar$(dwm_keyboard)"
